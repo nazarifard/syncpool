@@ -7,7 +7,6 @@ In a especially case it provides SlicePool that can be used in many applications
 
 ## Usage
 syncpool provides a generic pool of any entity easily.
-
 ```go
 var MyString string
 var myStringPool = syncpool.NewPool[MyString]()
