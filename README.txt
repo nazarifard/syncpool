@@ -5,8 +5,9 @@ syncpool package is a wrapper on sync.pool and some other related packages that 
 Briefly syncpool can provide a temp pool of any arbitrary objects easily. As well as it provides a slice of any objects.
 In a especially case it provides SlicePool that can be used in many applications. for example we almost need BufferPool always in most of applications.
 
-##Usage
+## Usage
 syncpool provides a generic pool of any entity easily.
+
 ```go
 var MyString string
 var myStringPool = syncpool.NewPool[MyString]()
