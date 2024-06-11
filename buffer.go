@@ -27,8 +27,8 @@ func (bp BufferPool) Get(size int) Buffer {
 	return buffer
 }
 
-type RBuffer Buffer
-func (rb RBuffer) Read(bs []byte) (n int, err error) {
+type RBuffer zapbuffer.Buffer
+func (rb *RBuffer) Read(bs []byte) (n int, err error) {
         n = copy(bs, Buffer(rb).Bytes())
         return
 }
