@@ -6,6 +6,7 @@ import (
 
 type Entity struct {
 	Name string
+	Job  string
 	Age  int
 }
 
@@ -15,6 +16,7 @@ func TestPool(t *testing.T) {
 	a := entityPool.Get()
 	a.Age = 123
 	a.Name = "OldMan"
+	a.Job = "Developer"
 	entityPool.Put(a) // a should be reset here, before release
 
 	got := entityPool.Get()
@@ -29,6 +31,7 @@ func BenchmarkPool(b *testing.B) {
 		a := entityPool.Get()
 		a.Age = 123
 		a.Name = "OldMan"
+		a.Job = "Developer"
 		entityPool.Put(a)
 	}
 }
@@ -39,5 +42,6 @@ func BenchmarkNoPool(b *testing.B) {
 		a = new(Entity)
 		a.Age = 123
 		a.Name = "OldMan"
+		a.Job = "Developer"
 	}
 }

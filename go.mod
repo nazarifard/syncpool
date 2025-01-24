@@ -1,6 +1,6 @@
 module github.com/nazarifard/syncpool
 
-go 1.22.4
+go 1.23.4
 
 require (
 	github.com/libp2p/go-buffer-pool v0.1.0
